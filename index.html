@@ -54,7 +54,7 @@
     <ol class="list-decimal list-inside text-gray-700 space-y-4 text-lg">
       <li>Elige la cantidad de boletos que deseas comprar (RD$1,500 c/u).</li>
       <li>Realiza el depósito o transferencia a cualquiera de nuestras cuentas mostradas abajo.</li>
-      <li>En el formulario, completa tus datos y sube el comprobante (voucher) del pago.</li>
+      <li>En el formulario, completa tus datos y <strong>sube el comprobante o captura de pantalla</strong> del pago.</li>
       <li>Envía el formulario y espera nuestro contacto por WhatsApp con el código único asignado.</li>
       <li>¡Mantente atento al sorteo una vez se hayan vendido todos los boletos!</li>
     </ol>
@@ -112,7 +112,7 @@
       </select>
 
       <label class="block">
-        <span class="text-gray-700">Sube tu comprobante de pago *</span>
+        <span class="text-gray-700">Sube tu comprobante o captura de pantalla *</span>
         <input
           type="file"
           id="voucher"
@@ -159,4 +159,59 @@
         alt="Banco Popular"
         class="w-28 h-auto object-contain"
       />
-      <p class="font-semibold">Banco Popular
+      <p class="font-semibold">Banco Popular</p>
+      <p class="text-sm">(837709252) Viviana Rodriguez</p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center space-y-4">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1024px-PayPal.svg.png"
+        alt="PayPal"
+        class="w-28 h-auto object-contain"
+      />
+      <p class="font-semibold">PayPal</p>
+      <p class="text-sm">[Correo aquí]</p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center space-y-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-20 h-20 text-cyan-600"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="1.5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4v16m8-8H4"
+        />
+      </svg>
+      <p class="font-semibold">Quik</p>
+      <p class="text-sm">[QR o instrucciones aquí]</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6 text-sm">
+    © 2025 <strong>JoVi Rifas RD</strong> · Todos los derechos reservados
+  </footer>
+
+  <script>
+    document.getElementById('rifaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const voucherInput = document.getElementById('voucher');
+      if (voucherInput.files.length === 0) {
+        alert('Por favor, sube el comprobante o captura de pantalla de pago.');
+        return;
+      }
+
+      alert('¡Gracias por enviar tu comprobante! Te contactaremos pronto vía WhatsApp.');
+
+      this.reset();
+    });
+  </script>
+</body>
+</html>
