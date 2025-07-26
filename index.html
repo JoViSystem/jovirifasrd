@@ -17,15 +17,9 @@
       animation: float 3s ease-in-out infinite;
     }
     @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
   </style>
 </head>
@@ -69,10 +63,34 @@
       🎟️ Compra tu boleto
     </h2>
     <form id="rifaForm" action="https://formspree.io/f/mldlrgpv" method="POST" enctype="multipart/form-data">
-      <input type="text" name="whatsapp" placeholder="Número de WhatsApp" required class="w-full p-4 border border-gray-300 rounded mb-4" />
-      <input type="email" name="email" placeholder="Correo electrónico" required class="w-full p-4 border border-gray-300 rounded mb-4" />
-      <input type="number" name="cantidad" placeholder="Cantidad de boletos" min="1" max="10" required class="w-full p-4 border border-gray-300 rounded mb-4" />
-      <select name="metodoPago" required class="w-full p-4 border border-gray-300 rounded mb-4">
+      <input
+        type="text"
+        name="whatsapp"
+        placeholder="Número de WhatsApp"
+        required
+        class="w-full p-4 border border-gray-300 rounded mb-4"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Correo electrónico"
+        required
+        class="w-full p-4 border border-gray-300 rounded mb-4"
+      />
+      <input
+        type="number"
+        name="cantidad"
+        placeholder="Cantidad de boletos"
+        min="1"
+        max="10"
+        required
+        class="w-full p-4 border border-gray-300 rounded mb-4"
+      />
+      <select
+        name="metodoPago"
+        required
+        class="w-full p-4 border border-gray-300 rounded mb-4"
+      >
         <option value="" disabled selected>Método de pago</option>
         <option value="Banreservas">Banreservas</option>
         <option value="Banco Popular">Banco Popular</option>
@@ -81,42 +99,24 @@
       </select>
       <label class="block mb-4">
         <span class="text-gray-700">Sube tu comprobante o captura de pantalla *</span>
-        <input type="file" name="voucher" required accept="image/*,application/pdf" class="mt-1 block w-full p-2 border border-gray-300 rounded" />
+        <input
+          type="file"
+          name="voucher"
+          required
+          accept="image/*,application/pdf"
+          class="mt-1 block w-full p-2 border border-gray-300 rounded"
+        />
       </label>
       <label class="flex items-center text-sm mb-6">
         <input type="checkbox" name="acepto" required class="mr-2" />
         Acepto los
         <a href="#" class="text-cyan-600 underline ml-1">términos y condiciones</a>
       </label>
-      <button type="submit" class="w-full bg-black hover:bg-gray-900 text-white font-bold py-4 rounded-full text-lg transition">
+      <button
+        type="submit"
+        class="w-full bg-black hover:bg-gray-900 text-white font-bold py-4 rounded-full text-lg transition"
+      >
         Enviar comprobante y participar
-      </button>
-    </form>
-  </section>
-
-  <!-- Formulario contacto -->
-  <section
-    id="contacto"
-    class="py-16 px-6 max-w-xl mx-auto bg-white rounded-xl shadow-xl mb-12"
-  >
-    <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">
-      📬 Contáctanos
-    </h2>
-    <form action="https://formspree.io/f/mldlrgpv" method="POST" class="grid gap-4 text-left">
-      <label for="nombre" class="font-semibold">Nombre</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" class="p-3 rounded text-gray-900" required />
-
-      <label for="email" class="font-semibold">Correo electrónico</label>
-      <input type="email" id="email" name="email" placeholder="tu@correo.com" class="p-3 rounded text-gray-900" required />
-
-      <label for="telefono" class="font-semibold">Número de teléfono</label>
-      <input type="tel" id="telefono" name="telefono" placeholder="Ej. 809-000-0000" class="p-3 rounded text-gray-900" required />
-
-      <label for="mensaje" class="font-semibold">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" class="p-3 rounded text-gray-900" required></textarea>
-
-      <button type="submit" class="bg-white text-gray-900 font-semibold px-6 py-2 rounded shadow hover:bg-gray-100 transition">
-        Enviar mensaje
       </button>
     </form>
   </section>
