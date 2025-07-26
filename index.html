@@ -68,49 +68,42 @@
     <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">
       🎟️ Compra tu boleto
     </h2>
- <form
-  action="https://formspree.io/f/meozgpyr"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
-      />
+    <form
+      id="rifaForm"
+      action="https://formspree.io/f/meozgpyr"
+      method="POST"
+      enctype="multipart/form-data"
+    >
       <input
         type="text"
-        id="whatsapp"
+        name="whatsapp"
         placeholder="Número de WhatsApp"
         required
-        class="w-full p-4 border border-gray-300 rounded"
+        class="w-full p-4 border border-gray-300 rounded mb-4"
       />
+
       <input
         type="email"
-        id="correo"
+        name="correo"
         placeholder="Correo electrónico"
         required
-        class="w-full p-4 border border-gray-300 rounded"
+        class="w-full p-4 border border-gray-300 rounded mb-4"
       />
+
       <input
         type="number"
-        id="cantidad"
+        name="cantidad"
         placeholder="Cantidad de boletos"
         min="1"
         max="10"
         required
-        class="w-full p-4 border border-gray-300 rounded"
+        class="w-full p-4 border border-gray-300 rounded mb-4"
       />
+
       <select
-        id="metodoPago"
+        name="metodoPago"
         required
-        class="w-full p-4 border border-gray-300 rounded"
+        class="w-full p-4 border border-gray-300 rounded mb-4"
       >
         <option value="" disabled selected>Método de pago</option>
         <option value="Banreservas">Banreservas</option>
@@ -119,23 +112,21 @@
         <option value="Quik">Quik</option>
       </select>
 
-      <label class="block">
+      <label class="block mb-4">
         <span class="text-gray-700">Sube tu comprobante o captura de pantalla *</span>
         <input
           type="file"
-          id="voucher"
+          name="voucher"
           required
           accept="image/*,application/pdf"
           class="mt-1 block w-full p-2 border border-gray-300 rounded"
         />
       </label>
 
-      <label class="flex items-center text-sm">
-        <input type="checkbox" id="acepto" required class="mr-2" />
+      <label class="flex items-center text-sm mb-6">
+        <input type="checkbox" name="acepto" required class="mr-2" />
         Acepto los
-        <a href="#" class="text-cyan-600 underline ml-1"
-          >términos y condiciones</a
-        >
+        <a href="#" class="text-cyan-600 underline ml-1">términos y condiciones</a>
       </label>
 
       <button
@@ -208,17 +199,14 @@
 
   <script>
     document.getElementById('rifaForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const voucherInput = document.getElementById('voucher');
+      const voucherInput = document.querySelector('input[name="voucher"]');
       if (voucherInput.files.length === 0) {
+        e.preventDefault();
         alert('Por favor, sube el comprobante o captura de pantalla de pago.');
-        return;
+        return false;
       }
 
       alert('¡Gracias por enviar tu comprobante! Te contactaremos pronto vía WhatsApp.');
-
-      this.reset();
     });
   </script>
 </body>
